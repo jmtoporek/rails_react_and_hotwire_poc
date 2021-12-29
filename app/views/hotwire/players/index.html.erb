@@ -1,7 +1,7 @@
 
   <div class="table-responsive">
 
-    <h1>Hotwire Demo for Players</h1>
+    <h1>Stimulus + Hotwire Demo for Players</h1>
 
     <%= form_with(url: search_hotwire_players_path, data: { controller: 'form-submission', form_submission_target: "form" }) do |form| %>
       <%= form.label :query, "Search by name:" %>
@@ -21,5 +21,10 @@
 
     <%= link_to 'New Player', new_hotwire_player_path, class: 'btn btn-primary' %>
 
+  </div>
+
+  <div>
+  <% colby_blog_post_url = "https://www.colby.so/posts/instant-search-with-rails-6-and-hotwire" %>
+  This demo is based on this blog post by David Colby - <%= link_to colby_blog_post_url, colby_blog_post_url %>
   </div>
 

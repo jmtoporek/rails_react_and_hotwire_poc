@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ReactAndHotwire</title>
+    <title>Rails React vs Hotwire POC</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,6 +13,30 @@
   </head>
 
   <body>
+  
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li>
+              <a href="/" class="nav-link px-2 text-secondary">Home</a>
+            </li>
+            <li>
+              <a href="/players" class="nav-link px-2 text-white">Rails Scaffold</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 text-white">React on Rails</a>
+            </li>
+            <li>
+              <%= link_to "Stimulus + Hotwire", hotwire_players_path, class: "nav-link px-2 text-white" %>
+            </li>
+            <li><a href="#" class="nav-link px-2 text-white">jQuery</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col">
