@@ -2,9 +2,9 @@ class Hotwire::PlayersController < PlayersController
 
   def search
     if params[:query].present?
-      @users = Player.where("name LIKE ?", "%#{params[:query]}%")
+      @players = Player.where("name LIKE ?", "%#{params[:query]}%")
     else
-      @users = Player.all
+      @players = Player.all
     end
   
     render turbo_stream: turbo_stream.replace(
