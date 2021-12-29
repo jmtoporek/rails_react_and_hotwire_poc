@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+player_names = [
+  "Lionel Messi",
+  "Cristiano Ronaldo",
+  "Adres Iniesta",
+  "Ilkay Gundogan",
+  "Jadon Sancho",
+  "Ruben Dias",
+  "Riyad Mahrez",
+  "Leon Goretzka",
+  "Karim Benzema",
+  "Mohamed Salah",
+  "Joshua Kimmich",
+  "Jan Oblak",
+  "Cristiano Ronaldo",
+  "Romelu Lukaku",
+  "Bruno Fernandes",
+  "Erling Haaland",
+  "Harry Kane",
+  "Kylian Mbappe",
+  "Neymar",
+  "Robert Lewandowski",
+  "Kevin De Bruyne",
+]
+player_names.each { |player_name| Player.create(name: player_name)}
