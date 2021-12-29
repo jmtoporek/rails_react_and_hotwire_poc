@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>React on Rails + Stimulus/Hotwire Proof of Concept</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/heroes/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      @media (min-width: 992px) {
+        .rounded-lg-3 { border-radius: .3rem; }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <main class="p-4">
+
+      <div class="px-4 text-center">
+        <img src="https://rubyonrails.org/assets/images/logo.svg" height="80" />
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K" alt="react logo" height="80" />
+        <h1 class="display-5 fw-bold">React on Rails + Stimulus/Hotwire Proof of Concept</h1>
+        
+        <div class="col-lg-6 mx-auto">
+
+          <p class="lead mb-4">I love building web apps using <a href="https://rubyonrails.org/" class="link" target="_blank">Ruby on Rails</a>. I also love using <a href="https://reactjs.org/" target="_blank">React</a> to build interactive web pages. There's a gem called <a href="https://www.shakacode.com/react-on-rails/docs/" target="_blank">React on Rails</a> that makes it easy to use these technologies together. I used all of these technologies when building a SaaS app called <a href="https://keenforms.com" target="_blank">Keenforms</a>, it's a form builder with a rules engine and a no code interface.</p>
+
+          <p class="lead mb-4">Keenforms is my side project though. I make a living as a consultant primarily building web based apps. Almost all of these apps are Single Page Applications (SPAs), heavily relying on 2 of the most popular Javascript frameworks/libraries, React and Angular. As someone who makes their living building these apps there has been moments where I've had the thought "is this really necessary for every single project?" While there are definitely use cases where the effort required to build these apps can be justified because of the User Experience that only modern SPAs can deliver, its become the norm to build them whether the the project requirements merit them or not. <a href="https://m.signalvnoise.com/html-over-the-wire/">I know I'm not alone in this sentiment.</a></p>
+
+          <p class="lead mb-4">Those feelings almost always occur when I'm forced to use Angular, not when I use React. But even for the simplest of use cases building a React component at times seems a bit excessive. There are at least a couple of projects that would have gone smoother if we had just done most of the rendering server side, and then leverage jQuery or plain old javascript when the UX called for it.</p>
+
+          <p class="lead mb-4">Recently there has been a lot discussion about the release of Rails 7 and <a href="https://hotwired.dev/" target="_blank">Hotwire/Stimulus</a>. It's a different approach to building interactive Rails apps, where the server renders the HTML, and the javascript replaces or updates those DOM elements. I found it worth investigating because, while I love React and I think React does the best job of being able to deliver the kind of user experience, for simpler features it would seem that the Simulus & Hotwire approach could deliver something comparable, but with less effort, less code and less complexity, at least when compared to building a React component from scratch.</p>
+  
+          <p class="lead mb-4">I have seen some interesting demos and tutorials online, like at <a href="https://gorails.com/episodes/hotwire-rails" target="_blank">GoRails</a> or <a href="https://www.colby.so/posts/instant-search-with-rails-6-and-hotwire" target="_blank">David Colby's blog</a>. I wanted to at least try out Hotwire/Stimulus, if only to experience first hand if it was an option worth considering for the future.</p>
+
+          <p class="lead mb-4">It took some effort to get Hotwire/Stimulus working in the app. Just adding it to the client side assets was a hassle. Part of that is related to how Keenforms already is using webpacker. Most of the tutorials were not using webpacker, since Rails 7 does not use it as the default for packaging client side assets. I even reached out to David Colby as well as the Slack channel for React on Rails when I got stuck. However after a lot frustration I eventualy figured it out. After announcing my success on the Slack channel, Justin Gordon, the brains behind React on Rails, asked if I could provide a code sample. So here it is, both React on Rails and Stimulus/Hotwire working in the same code base.</p>
+
+          <p class="lead mb-4">Is this even a good idea? To build an app that has both of these front end  frameworks? That's not really something I considered when I started this, but if you're asking...</p>
+
+          <p class="lead mb-4">I really like the approach of using turbo frames/streams to generate HTML over the wire. There are times where this approach makes a lot of sense, to let the back end generate the HTML, and perform wholesale replacement of sections of a webpage, especially for <a href="https://www.colby.so/posts/instant-search-with-rails-6-and-hotwire" target="_blank">David Colby's example where you can search dynamically without reloading the page.</a> You are sacrificing at least some control and user experience when you take this approach, but its definitely requires less code to implement compared to building the same feature in React.</p>
+          
+          <p class="lead mb-4">However for someone like myself, who has written a lot of Javascript over the years (since 2008!), and has learned a lot of different Javascript frameworks and libraries (jQuery, ExtJs/Sencha, Angular, React to name a few) and has seen many of these libraries fall into and out of favor, I have to say that Stimulus leaves a lot to be desired.</p>
+          
+          <p>For one I'm not a fan of stimulus' syntax. It uses the same approach that Rails takes, "convention over configuration" to how you name the file of your stimulus controller, and how it is magically binds to the HTML page and the DOM elements. To get functions to bind to HTML elements you add data attributes to to the HTML, things like data-action=""
+             Turbo does the work of replacing or appending DOM element on the page. You could easily do both of thse things using jQuery, and jQuery is more readable, is better documented and supported, and easier to debug because it uses a more explicit approach to binding events to DOM elements.</p>
+
+          <p class="lead mb-4">Stimulus does seem a little better suited for templating and state management compared to jQuery. I have not fully explored data streams and web sockets using Stimulus/Hotwire. However based on what I've seen and learned so far about Stimulus and Hotwire, I have a hard time justifying learning yet another javascript framework that, if I'm being totally honest, is a substandard replacement for jQuery.</p>
+
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center d-none">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </body>
+</html>
