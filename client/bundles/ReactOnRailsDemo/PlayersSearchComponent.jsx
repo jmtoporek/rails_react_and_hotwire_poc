@@ -15,7 +15,7 @@ const PlayersSearchComponent = (props) => {
 
   const submitSearchQuery = (event) => {
     const queryParam = event.target.value;
-    const searchURL = `${window.location.href}/search?query=${queryParam}`;
+    const searchURL = `${window.location.href}/search.json?query=${queryParam}`;
     fetch(searchURL)
     .then(response => response.json())
     .then(data => {

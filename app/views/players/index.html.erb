@@ -1,9 +1,9 @@
 
   <div class="table-responsive">
 
-    <h1>Rails Scaffold Demo for Players</h1>
+    <h1 id="page-title">Rails Scaffold Demo for Players</h1>
 
-    <%= form_with(url: search_hotwire_players_path, data: { controller: 'form-submission', form_submission_target: "form" }) do |form| %>
+    <%= form_with(url: search_hotwire_players_path, method: :get) do |form| %>
       <%= form.label :query, "Search by name:" %>
       <%= form.text_field :query, data: { action: "input->form-submission#search" } %>
     <% end %>

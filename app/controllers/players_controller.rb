@@ -64,7 +64,10 @@ class PlayersController < ApplicationController
       @players = Player.all
     end
   
-    render json: @players
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @players }
+    end
   end
 
   private
