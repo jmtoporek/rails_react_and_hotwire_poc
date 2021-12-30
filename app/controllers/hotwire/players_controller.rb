@@ -1,19 +1,5 @@
 class Hotwire::PlayersController < PlayersController
 
-  def create
-    @player = Player.new(player_params)
-
-    respond_to do |format|
-      if @player.save
-        format.html { redirect_to hotwire_player_url(@player), notice: "Player was successfully created." }
-        format.json { render :show, status: :created, location: @player }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def search
     if params[:query].present?
       @players = Player.where("name LIKE ?", "%#{params[:query]}%")
@@ -28,6 +14,14 @@ class Hotwire::PlayersController < PlayersController
         players: @players
       }
     )
+  end
+
+  def get_player_path(player)
+    hotwire_player_url(player)
+  end
+
+  def get_players_path
+    hotwire_players_url
   end
 
 end
