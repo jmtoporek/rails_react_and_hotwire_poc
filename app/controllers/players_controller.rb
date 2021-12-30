@@ -25,7 +25,7 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to player_url(@player), notice: "Player was successfully created." }
+        format.html { redirect_to get_player_path(@player), notice: "Player was successfully created." }
         format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class PlayersController < ApplicationController
   def update
     respond_to do |format|
       if @player.update(player_params)
-        format.html { redirect_to player_url(@player), notice: "Player was successfully updated." }
+        format.html { redirect_to get_player_path(@player), notice: "Player was successfully updated." }
         format.json { render :show, status: :ok, location: @player }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,6 +57,16 @@ class PlayersController < ApplicationController
     end
   end
 
+  def search
+    if params[:query].present?
+      @players = Player.where("name LIKE ?", "%#{params[:query]}%")
+    else
+      @players = Player.all
+    end
+  
+    render json: @players
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player
@@ -66,5 +76,13 @@ class PlayersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def player_params
       params.require(:player).permit(:name)
+    end
+
+    def get_player_path(player)
+      player_path(player)
+    end
+
+    def get_players_path
+      players_path
     end
 end
