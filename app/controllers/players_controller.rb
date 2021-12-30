@@ -67,6 +67,12 @@ class PlayersController < ApplicationController
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @players }
+      format.turbo_stream { render turbo_stream: turbo_stream.replace(
+          'players',
+          partial: 'list',
+          locals: { players: @players}
+        )
+      }
     end
   end
 
