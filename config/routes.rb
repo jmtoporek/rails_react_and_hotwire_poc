@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       collection do
         get 'search'
         post 'search'
+        get 'players_frame'
       end
     end
   end
