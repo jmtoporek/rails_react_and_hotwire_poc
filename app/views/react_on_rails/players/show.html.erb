@@ -1,0 +1,9 @@
+<p>
+  <strong>Name:</strong>
+  <%= @player.name %>
+</p>
+
+<div class="btn-group" role="group">
+  <%= link_to 'Edit', edit_react_on_rails_player_path(@player), class: 'btn btn-primary' %>
+  <%= link_to 'Back', react_on_rails_players_path, class: 'btn btn-link' %>
+</div>
