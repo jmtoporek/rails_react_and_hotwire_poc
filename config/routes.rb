@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :players do
       collection do
         get 'search'
-        post 'search'
       end
     end
   end
@@ -13,7 +12,13 @@ Rails.application.routes.draw do
     resources :players do
       collection do
         get 'search'
-        post 'search'
+      end
+    end
+  end
+  namespace :jquery do
+    resources :players do
+      collection do
+        get 'search'
       end
     end
   end
