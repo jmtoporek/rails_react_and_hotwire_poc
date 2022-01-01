@@ -27,5 +27,14 @@ player_names = [
   "Neymar",
   "Robert Lewandowski",
   "Kevin De Bruyne",
+  "Zlatan Ibrahimović",
+  "Christian Pulisic",
+  "Paul Pogba",
+  "N'Golo Kanté",
+  "Son Heung-min",
+  "Luka Modric",
+  "Manuel Neuer",
+  "Trent Alexander-Arnold",
+  "Jamie Vardy"
 ]
 player_names.each { |player_name| Player.create(name: player_name)}
