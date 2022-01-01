@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  layout "scaffold_layout"
   before_action :set_player, only: %i[ show edit update destroy ]
 
   # GET /players or /players.json
