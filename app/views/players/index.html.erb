@@ -1,9 +1,9 @@
 
   <div class="table-responsive">
 
-    <h1 id="page-title">Rails Scaffold Demo for Players</h1>
+    <h1 id="page-title"><%= get_page_title %> Demo for Players</h1>
 
-    <%= form_with(url: search_players_path, method: :get) do |form| %>
+    <%= form_with(url: get_search_players_path, method: :get) do |form| %>
       <%= form.label :query, "Search by name:" %>
       <%= form.text_field :query, value: params[:query], autocomplete: 'off' %>
       <%= form.submit 'search', name: nil %>
@@ -21,15 +21,15 @@
         <% @players.each do |player| %>
           <tr>
             <td><%= player.name %></td>
-            <td><%= link_to 'Show', player %></td>
-            <td><%= link_to 'Edit', edit_player_path(player) %></td>
-            <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', get_player_path(player) %></td>
+            <td><%= link_to 'Edit', get_edit_player_path(player) %></td>
+            <td><%= link_to 'Destroy', get_player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <%= link_to 'New Player', new_player_path, class: 'btn btn-primary' %>
+    <%= link_to 'New Player', get_new_player_path, class: 'btn btn-primary' %>
 
   </div>
 

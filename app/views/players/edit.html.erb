@@ -3,7 +3,7 @@
 <%= render 'form', player: @player %>
 
 <div class="btn-group" role="group">
-  <%= link_to 'Show', @player, class: 'btn btn-light' %>
-  <%= link_to 'Back', players_path, class: 'btn btn-light' %>
+  <%= link_to 'Show', get_player_path(@player), class: 'btn btn-light' %>
+  <%= link_to 'Back', get_players_path, class: 'btn btn-light' %>
 </div>
 
