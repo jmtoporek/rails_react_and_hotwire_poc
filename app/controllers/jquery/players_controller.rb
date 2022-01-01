@@ -1,5 +1,6 @@
 class Jquery::PlayersController < PlayersController
-
+  layout "jquery_layout"
+  
   def get_player_path(player)
     jquery_player_url(player)
   end

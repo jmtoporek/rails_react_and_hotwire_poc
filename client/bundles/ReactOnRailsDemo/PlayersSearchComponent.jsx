@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import debounce from 'lodash.debounce';
 
 const PlayersSearchComponent = (props) => {
 
@@ -31,7 +32,7 @@ const PlayersSearchComponent = (props) => {
       <div>
         <label htmlFor="query">Search by name:</label>
         <input 
-          onKeyUp={submitSearchQuery}
+          onKeyUp={debounce(submitSearchQuery, 250)}
           type="text" 
           name="query" 
           id="query" />
