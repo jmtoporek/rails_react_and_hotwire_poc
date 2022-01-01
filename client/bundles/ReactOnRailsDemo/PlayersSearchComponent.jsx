@@ -27,8 +27,6 @@ const PlayersSearchComponent = (props) => {
   
   return (
     <div>
-      <h3>React component for PlayersSearchComponent</h3>
-
       <div>
         <label htmlFor="query">Search by name:</label>
         <input 
@@ -36,6 +34,7 @@ const PlayersSearchComponent = (props) => {
           type="text" 
           name="query" 
           id="query" />
+        <input type="submit" value="search" />
       </div>
 
       <table className="table table-striped table-sm">

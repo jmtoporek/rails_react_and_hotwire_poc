@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails Javascript POC for Scaffold</title>
+    <title>Rails Javascript POC</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,11 +18,15 @@
 
     <div class="container-fluid mt-4">
       <div class="row">
-        <div class="col">
+        <div class="col-md-8 col-sm-12">
           <% if notice %>
           <div class="alert alert-success" role="alert"><%= notice %></div>
           <% end %>
           <%= yield %>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <h3>The Rails Scaffold example with (almost) no javascript</h3>
+          <p>This is a straight forward vanilla version of rails generated with scaffold from the command line. It's sort of like the control for an experiment. The only javascript included for this is rails-ujs, which is loaded via sprockets. I added bootstrap via CDN, and I added a little HTML/CSS to the buttons.</p>
         </div>
       </div>
     </div>
