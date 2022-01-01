@@ -1,3 +1,7 @@
+// TODO: add debounce to input
+// TODO: move to webpack perhaps?
+// TODO: import jquery from here
+console.log('load the jquery demo');
 const playersFrameUrl = '/players/get_players_html?';
 $(function() {
   if (document.location.href.includes('jquery') ) {
