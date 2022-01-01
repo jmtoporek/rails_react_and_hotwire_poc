@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'stimulus_hotwire', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -17,11 +17,18 @@
 
     <div class="container-fluid mt-4">
       <div class="row">
-        <div class="col">
+        <div class="col-md-8 col-sm-12">
           <% if notice %>
           <div class="alert alert-success" role="alert"><%= notice %></div>
           <% end %>
           <%= yield %>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <h3>The Rails Stimulus/Turbo/Hotwire Demo</h3>
+          <p>This whole project started when I decided I wanted to at least try to learn <a href="https://hotwired.dev/">Stimulus/Turbo/Hotwire</a> to see if it was worth using. Over the years I've written a lot of javascript and have been forced to use a lot of different js frameworks and plugins to do searching and sorting of grids. If the sorting and searching were simple and straightforward it wouldn't be so bad. However nearly every grid I've worked on was never simple or straight forward: deeply nested html inside of a table cell, dynamic fetching for more detailed information, various date formats, hidden columns, hidden rows, numbers with units of measure, etc. Each attempt would produce bugs, unpredictable behavior, and lot of aggravation. So the prospect offered by Stimulus/Turbo by moving all that logic over to the server sounded very attractive.</p>
+
+          <p>After poking around the internet I decided to use <a href="https://www.colby.so/posts/instant-search-with-rails-6-and-hotwire" target="_blank">this particular tutorial by David Colby</a>, its a very simple and straightforward implementation of search using Stimulus/Turbo. The blog post was originally written in Aug 2021, and I started this little experiment in very late Dec 2021. While I was eventually successful in getting it working, apparently it was already out of date in just 5 months because of all the changes made to Stimulus and Turbo. David Colby has updated the blog post to reflect the latest changes given that Rails 7 was recently released.</p>
+          </p>
         </div>
       </div>
     </div>
