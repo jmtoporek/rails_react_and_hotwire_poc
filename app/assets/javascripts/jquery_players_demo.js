@@ -1,4 +1,4 @@
-const playersFrameUrl = '/jquery/players/players_frame?';
+const playersFrameUrl = '/players/get_players_html?';
 $(function() {
   if (document.location.href.includes('jquery') ) {
     $("#page-title").text('jQuery as Hotwire Demo');

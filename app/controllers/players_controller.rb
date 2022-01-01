@@ -58,11 +58,7 @@ class PlayersController < ApplicationController
   end
 
   def search
-    if params[:query].present?
-      @players = Player.where("name LIKE ?", "%#{params[:query]}%")
-    else
-      @players = Player.all
-    end
+    @players = self.players_search
   
     respond_to do |format|
       format.html { render :index }
@@ -74,6 +70,11 @@ class PlayersController < ApplicationController
         )
       }
     end
+  end
+
+  def get_players_html
+    @players = self.players_search
+    render partial: 'hotwire/players/list'
   end
 
   private
@@ -93,5 +94,13 @@ class PlayersController < ApplicationController
 
     def get_players_path
       players_path
+    end
+
+    def players_search
+      if params[:query].present?
+        Player.where("name LIKE ?", "%#{params[:query]}%")
+      else
+        Player.all
+      end
     end
 end

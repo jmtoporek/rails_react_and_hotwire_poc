@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       post 'search'
+      get 'get_players_html'
     end
   end
   namespace :hotwire do

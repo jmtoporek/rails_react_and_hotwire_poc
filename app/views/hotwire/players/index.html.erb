@@ -5,7 +5,7 @@
 
     <%= form_with(url: search_hotwire_players_path, data: { controller: 'form-submission', form_submission_target: "form" }) do |form| %>
       <%= form.label :query, "Search by name:" %>
-      <%= form.text_field :query, data: { action: "input->form-submission#search" } %>
+      <%= form.text_field :query, data: { action: "input->form-submission#search" }, autocomplete: 'off'  %>
     <% end %>
 
     <table class="table table-striped table-sm">
