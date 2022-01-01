@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!-- 
-    note: without this tag the react component wont reload 
+    note: without this tag below for turbo visit control the react component wont reload 
     however this does slow things down in the process
     each page takes longer to reload without using turbo visit control
     -->
@@ -23,11 +23,18 @@
 
     <div class="container-fluid mt-4">
       <div class="row">
-        <div class="col">
+        <div class="col-md-8 col-sm-12">
           <% if notice %>
           <div class="alert alert-success" role="alert"><%= notice %></div>
           <% end %>
           <%= yield %>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <h3>The React on Rails Demo</h3>
+          
+          <p>I love <a href="https://reactjs.org/" target="_blank">React</a> and I love <a href="https://www.shakacode.com/react-on-rails/docs/" target="_blank">Justin Gordon's React on Rails gem</a>. I have been using it for a side project that I've been working on, called <a href="https://keenforms.com" target="_blank">Keenforms</a>. It's a form builder with a rules engine and a no code interface. It really offers the best of both worlds, where you get the speed of development using Ruby on Rails, while you can pick and choose when to use a React component to be able to deliver the kind of user experience that can only be done with javascript.</p>
+
+          <p>While I like creating Single Page Applications (SPAs) and using React Router, building a SPA always requires a lot more code and effort. I also wanted to preserve the ability to use .erb server side rendered pages, since not every single page in <a href="https://keenforms.com" target="_blank">Keenforms</a> merits creating a React component. React on Rails has been incredibly valuable to someone who is working a full time job while also building a side project SaaS.</p>
         </div>
       </div>
     </div>
