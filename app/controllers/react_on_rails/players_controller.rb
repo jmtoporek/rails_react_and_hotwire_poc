@@ -1,4 +1,5 @@
 class ReactOnRails::PlayersController < PlayersController
+  layout "react_on_rails_layout"
 
   def get_player_path(player)
     react_on_rails_player_url(player)

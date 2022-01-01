@@ -1,4 +1,5 @@
 class Hotwire::PlayersController < PlayersController
+  layout "hotwire_layout"
 
   def get_player_path(player)
     hotwire_player_url(player)
