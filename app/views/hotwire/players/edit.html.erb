@@ -2,5 +2,7 @@
 
 <%= render 'hotwire/players/form', player: @player %>
 
-<%= link_to 'Show', hotwire_player_path(@player), class: 'btn btn-primary' %>
-<%= link_to 'Back', hotwire_players_path, class: 'btn btn-secondary' %>
+<div class="btn-group" role="group">
+  <%= link_to 'Show', hotwire_player_path(@player), class: 'btn btn-light' %>
+  <%= link_to 'Back', hotwire_players_path, class: 'btn btn-light' %>
+<div>
