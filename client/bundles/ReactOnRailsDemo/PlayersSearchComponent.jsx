@@ -28,12 +28,12 @@ const PlayersSearchComponent = (props) => {
   return (
     <div>
       <div>
-        <label htmlFor="query">Search by name:</label>
+        <label htmlFor="query">Search by name:</label>&nbsp;
         <input 
           onKeyUp={debounce(submitSearchQuery, 250)}
           type="text" 
           name="query" 
-          id="query" />
+          id="query" />&nbsp;
         <input type="submit" value="search" />
       </div>
 
