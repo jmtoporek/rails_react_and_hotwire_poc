@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       post 'search'
-      get 'get_players_html'
+      get 'get_players_html' # does this work? do we keep this?
     end
   end
   namespace :hotwire do
@@ -24,6 +24,15 @@ Rails.application.routes.draw do
     end
   end
   namespace :jquery do
+    resources :players do
+      collection do
+        get 'search'
+        post 'search'
+        get 'players_frame'
+      end
+    end
+  end
+  namespace :poj do
     resources :players do
       collection do
         get 'search'

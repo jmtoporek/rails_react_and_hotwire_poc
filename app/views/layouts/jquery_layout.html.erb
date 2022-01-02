@@ -14,7 +14,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application_jquery', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -23,14 +23,33 @@
 
     <div class="container-fluid mt-4">
       <div class="row">
+
         <div class="col-8">
           <% if notice %>
           <div class="alert alert-success" role="alert"><%= notice %></div>
           <% end %>
           <%= yield %>
         </div>
-        <div class="col-4">
-          about the jquery prototype
+
+        <div class="col-md-4 col-sm-12">
+          <h3>About the jQuery as Hotwire example </h3>
+          <p>After the frustration of trying get the Stimulus/Turbo POC working I realized I could easily emulate the same concepts with jQuery. I added a special API endpoint that returns </p>
+          <br />
+          <p>bUT jQUeRy tAKeS sO mUCh TImE to LoAd!!!</p>
+          <p>And jQuery is for amateurs who can't run linux on their home computer because <a href="https://www.reddit.com/r/iamverysmart/" target="_blank">i am very smart</a></p>
+          <hr />
+          <p>Yes I am aware that modern Javascript can do a lot of the things that <a href="https://jquery.com/" target="_blank">jQuery</a> does, and jQuery has a lot of functions that most people never use. There was a time where many devs added jQuery to their site just so they could call <code>$("#id_here").toggle()</code>.</p>
+
+          <p>Thing is I started writing javascript when IE6 was still a thing, and <code>document.getElementById</code> did not function the same way on IE6 as it did on every other browser. jQuery made that problem, as well as many others, a non issue. Plus jQuery's syntax is a thing of beauty. I think some of the hostility against jQuery comes from those of us who did interviews (on the hiring side) looking for front end developers. It turned out that a lot of people who considered themselves to be front end developers actually only know one thing - jQuery.</p>
+
+          <p>It's a little odd though to hear the criticism about concerns of load time and performance related to jQuery, at least from the Rails community. You realize that Rails loads a lot of libraries that many will never use at all. Any experienced Rails dev knows about the N+1 problem. That's not why you use Rails - you use because it was optimized for programmer happiness. I feel the same way about jQuery. I personally owe <a href="https://johnresig.com/">John Resig, the author of jQuery</a> quite a bit for saving me countless hours. At one point I worked for a SaaS company as a consultant where I delivered custom features for customers. I had no control over the HTML, so the only way to deliver those features was to write javascript. I wrote a lot of jQuery to make those customizations. Here's an example of one of the snippets of code I wrote:</p>
+<pre>
+<code>$("ul.tab-strip > li.active")
+  .click(function(){
+    callOnClick();
+  });</code>
+</pre>
+          <p>Do you know how to write the code above in plain old javascript? I do, and I'd prefer not. I realize a lot has changed since then, but I still have a lot of love for jQuery.</p>
         </div>
       </div>
     </div>
