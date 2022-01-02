@@ -26,6 +26,24 @@
         <div class="col-md-4 col-sm-12">
           <h3>Plain Old Javascript example </h3>
           <p>I shared the git hub repo on rails subreddit, and immediately someone felt the need to whine about the load time for jQuery. Fine, here's the same thing with plain old javascript. We're saving so much load time and bandwidth with all those users that are accessing this site on... localhost :/</p>
+          <hr />
+          <p>While I built out this demo I used the following syntax;
+          </p>
+<pre>
+<code>
+const updatePlayersHtml = (playersHtml) => {
+  let tbody = document.createElement('TBODY');
+  tbody.setAttribute("id", "players");
+  playersHtml gets plucked, that its not double tagged
+  tbody.innerHTML = playersHtml;
+  const playersDomElement = document.getElementById("players");
+  const tablePlayers = playersDomElement.parentNode;
+  tablePlayers.replaceChild(tbody, playersDomElement);
+}</code>
+</pre>
+            <p>I learned something new about javascript and the document API - the response that comes back from the server, <code>playersHtml</code> is formatted as a string that has a tbody tag. And then we add that that string as innerHTML to the <code>&lt;tbody&gt;</code> element we created. So you would think that would create a <code>&lt;tbody&gt;</code> node tag nested inside another <code>&lt;tbody&gt;</code>. Which is not what we want.</p>
+            <p>However when you create a node element, <code>document.createElement('TBODY');</code> and then you set the innerHTML, apparently any invalid nested HTML will be stripped out. I thought I would have to reformat the HTML response manually in order to perform the swap of the old tbody tag for the new one.</p>
+            <p>For my own curiosity I wanted to see what would happen if I put the HTML response inside of a <code>&lt;div&gt;</code> tag, by using changing the above code to <code>document.createElement('DIV');</code>. After setting the innerHTML to the response from the server with the <code>&lt;tbody&gt;</code> and <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code> tags, all of them were stripped out and the only valid HTML left were the <code>&lt;a&gt;</code> tags. It's definitely a WTF javascript moment, but also it makes the update much easier since you dont have to manually format the HTML yourself. Just thought it was worth sharing. I've been writing JS for more than 12 years and I'm still finding surprises.</p>
         </div>
 
       </div>

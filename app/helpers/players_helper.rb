@@ -73,11 +73,11 @@ module PlayersHelper
     if params[:controller].starts_with?('jquery')
       "jQuery as Hotwire"
     elsif params[:controller].starts_with?('poj')
-      "Plain Old Javascript"
+      "Plain Old Javascript as Hotwire"
     elsif params[:controller].starts_with?('react_on_rails')
       "React on Rails"
     elsif params[:controller].starts_with?('hotwire')
-      "Stimulus/Turbo Hotwire"
+      "Hotwire (Stimulus/Turbo)"
     else
       "Rails Scaffold"
     end
