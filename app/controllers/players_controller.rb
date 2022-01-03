@@ -75,7 +75,7 @@ class PlayersController < ApplicationController
 
   def get_players_html
     @players = self.players_search
-    render partial: 'hotwire/players/list'
+    render partial: 'tb/players/list'
   end
 
   private

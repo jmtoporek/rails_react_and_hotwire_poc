@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       # post 'search'
-      # get 'get_players_html' # does this work? do we keep this?
+      get 'get_players_html' # does this work? do we keep this?
     end
   end
   namespace :react_on_rails do
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       collection do
         get 'search'
         post 'search'
-        get 'players_frame'
+        get 'get_players_html'
       end
     end
   end
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       collection do
         get 'search'
         post 'search'
-        get 'players_frame'
+        get 'get_players_html'
       end
     end
   end
