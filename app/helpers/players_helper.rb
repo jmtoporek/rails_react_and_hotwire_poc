@@ -6,8 +6,8 @@ module PlayersHelper
       poj_players_path
     elsif params[:controller].starts_with?('react_on_rails')
       react_on_rails_players_path
-    elsif params[:controller].starts_with?('turbo')
-      turbo_players_path
+    elsif params[:controller].starts_with?('tb')
+      tb_players_path
     else
       players_path
     end
@@ -20,8 +20,8 @@ module PlayersHelper
       poj_player_path(player.id)
     elsif params[:controller].starts_with?('react_on_rails')
       react_on_rails_player_path(player.id)
-    elsif params[:controller].starts_with?('turbo')
-      turbo_player_path(player.id)
+    elsif params[:controller].starts_with?('tb')
+      tb_player_path(player.id)
     else
       player_path(player.id)
     end
@@ -34,8 +34,8 @@ module PlayersHelper
       edit_poj_player_path(player.id)
     elsif params[:controller].starts_with?('react_on_rails')
       edit_react_on_rails_player_path(player.id)
-    elsif params[:controller].starts_with?('turbo')
-      edit_turbo_player_path(player.id)
+    elsif params[:controller].starts_with?('tb')
+      edit_tb_player_path(player.id)
     else
       edit_player_path(player.id)
     end
@@ -48,8 +48,8 @@ module PlayersHelper
       new_poj_player_path
     elsif params[:controller].starts_with?('react_on_rails')
       new_react_on_rails_player_path
-    elsif params[:controller].starts_with?('turbo')
-      new_turbo_player_path
+    elsif params[:controller].starts_with?('tb')
+      new_tb_player_path
     else
       new_player_path
     end
@@ -62,8 +62,8 @@ module PlayersHelper
       search_poj_players_path
     elsif params[:controller].starts_with?('react_on_rails')
       search_react_on_rails_players_path
-    elsif params[:controller].starts_with?('turbo')
-      search_turbo_players_path
+    elsif params[:controller].starts_with?('tb')
+      search_tb_players_path
     else
       search_players_path
     end
@@ -76,7 +76,7 @@ module PlayersHelper
       "Plain Old Javascript as Turbo"
     elsif params[:controller].starts_with?('react_on_rails')
       "React on Rails"
-    elsif params[:controller].starts_with?('turbo')
+    elsif params[:controller].starts_with?('tb')
       "Turbo"
     else
       "Rails Scaffold"

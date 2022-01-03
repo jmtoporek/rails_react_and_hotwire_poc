@@ -1,0 +1,8 @@
+<h1>Editing Player</h1>
+
+<%= render 'tb/players/form', player: @player %>
+
+<div class="btn-group" role="group">
+  <%= link_to 'Show', tb_player_path(@player), class: 'btn btn-light' %>
+  <%= link_to 'Back', tb_players_path, class: 'btn btn-light' %>
+</div>

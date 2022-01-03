@@ -1,0 +1,9 @@
+<p>
+  <strong>Name:</strong>
+  <%= @player.name %>
+</p>
+
+<div class="btn-group" role="group">
+  <%= link_to 'Edit', edit_tb_player_path(@player), class: 'btn btn-primary' %>
+  <%= link_to 'Back', tb_players_path, class: 'btn btn-link' %>
+</div>

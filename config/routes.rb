@@ -7,14 +7,18 @@ Rails.application.routes.draw do
       # get 'get_players_html' # does this work? do we keep this?
     end
   end
-  namespace :turbo do
-    resources :players
-  end
   namespace :react_on_rails do
     resources :players do
       collection do
         get 'search'
         #post 'search'
+      end
+    end
+  end
+  namespace :tb do
+    resources :players do
+      collection do
+        get 'search'
       end
     end
   end

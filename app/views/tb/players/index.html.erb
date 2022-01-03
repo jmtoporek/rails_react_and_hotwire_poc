@@ -1,8 +1,8 @@
 <div class="table-responsive">
 
-  <h1>Hotwire (Stimulus + Turbo) Demo</h1>
+  <h1>Turbo Demo</h1>
 
-  <%= form_with(url: hotwire_players_path, method: "GET", data: {
+  <%= form_with(url: tb_players_path, method: "GET", data: {
     turbo: "true",
     turbo_frame: "players_turbo_frame",
     turbo_action: "advance"
@@ -16,6 +16,6 @@
     <%= render "players_table", players: @players %>
   <% end %>
 
-  <%= link_to 'New Player', new_hotwire_player_path, class: 'btn btn-primary' %>
+  <%= link_to 'New Player', new_tb_player_path, class: 'btn btn-primary' %>
 
 </div>
