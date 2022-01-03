@@ -1,25 +1,20 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
+  #get 'hello_world', to: 'hello_world#index'
   resources :players do
     collection do
       get 'search'
-      post 'search'
-      get 'get_players_html' # does this work? do we keep this?
+      # post 'search'
+      # get 'get_players_html' # does this work? do we keep this?
     end
   end
-  namespace :hotwire do
-    resources :players do
-      collection do
-        get 'search'
-        post 'search'
-      end
-    end
+  namespace :turbo do
+    resources :players
   end
   namespace :react_on_rails do
     resources :players do
       collection do
         get 'search'
-        post 'search'
+        #post 'search'
       end
     end
   end

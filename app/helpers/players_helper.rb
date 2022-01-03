@@ -6,8 +6,8 @@ module PlayersHelper
       poj_players_path
     elsif params[:controller].starts_with?('react_on_rails')
       react_on_rails_players_path
-    elsif params[:controller].starts_with?('hotwire')
-      hotwire_players_path
+    elsif params[:controller].starts_with?('turbo')
+      turbo_players_path
     else
       players_path
     end
@@ -20,8 +20,8 @@ module PlayersHelper
       poj_player_path(player.id)
     elsif params[:controller].starts_with?('react_on_rails')
       react_on_rails_player_path(player.id)
-    elsif params[:controller].starts_with?('hotwire')
-      hotwire_player_path(player.id)
+    elsif params[:controller].starts_with?('turbo')
+      turbo_player_path(player.id)
     else
       player_path(player.id)
     end
@@ -34,8 +34,8 @@ module PlayersHelper
       edit_poj_player_path(player.id)
     elsif params[:controller].starts_with?('react_on_rails')
       edit_react_on_rails_player_path(player.id)
-    elsif params[:controller].starts_with?('hotwire')
-      edit_hotwire_player_path(player.id)
+    elsif params[:controller].starts_with?('turbo')
+      edit_turbo_player_path(player.id)
     else
       edit_player_path(player.id)
     end
@@ -48,8 +48,8 @@ module PlayersHelper
       new_poj_player_path
     elsif params[:controller].starts_with?('react_on_rails')
       new_react_on_rails_player_path
-    elsif params[:controller].starts_with?('hotwire')
-      new_hotwire_player_path
+    elsif params[:controller].starts_with?('turbo')
+      new_turbo_player_path
     else
       new_player_path
     end
@@ -62,8 +62,8 @@ module PlayersHelper
       search_poj_players_path
     elsif params[:controller].starts_with?('react_on_rails')
       search_react_on_rails_players_path
-    elsif params[:controller].starts_with?('hotwire')
-      search_hotwire_players_path
+    elsif params[:controller].starts_with?('turbo')
+      search_turbo_players_path
     else
       search_players_path
     end
@@ -71,13 +71,13 @@ module PlayersHelper
 
   def get_page_title
     if params[:controller].starts_with?('jquery')
-      "jQuery as Hotwire"
+      "jQuery as Turbo"
     elsif params[:controller].starts_with?('poj')
-      "Plain Old Javascript as Hotwire"
+      "Plain Old Javascript as Turbo"
     elsif params[:controller].starts_with?('react_on_rails')
       "React on Rails"
-    elsif params[:controller].starts_with?('hotwire')
-      "Hotwire (Stimulus/Turbo)"
+    elsif params[:controller].starts_with?('turbo')
+      "Turbo"
     else
       "Rails Scaffold"
     end
