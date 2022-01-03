@@ -76,14 +76,12 @@
           <p class="lead mb-4">Perhaps its a bit too early for me to pass judgement on Stimulus just yet. However based on the small sample size of what I've learned, the most diplomatic response would be that I have yet to see anything in Stimulus that makes me want to use it. Based on the fact that its so rails specific, it seems highly unlikely that it will gain amuch traction outside the hardcore Rails crowd.</p>
 
           <p class="lead mb-4">First and foremost I'm not a fan of Stimulus' syntax. It uses a similar approach as Rails, "convention over configuration" in how you need to name the file of your stimulus controller, and how it is magically binds to the HTML page and the DOM elements. To get functions to bind to HTML elements you add data attributes to to the HTML, things like 
-            <pre>
-              <code>
-                &lt;button data-action="click->hello#greet"&gt;Click me&lt;/button&gt;
-              </code>
-            </pre>
+<pre>
+<code>&lt;button data-action="click->hello#greet"&gt;Click me&lt;/button&gt;</code>
+</pre>
           </p> 
             
-          <p class="lead mb-4">The format is [action]->[controller_name]#[function_name]. It works similiarly with setting targets. What's annoying is that when Rails uses convention over configuration, it does so by setting up defaults that can be overriden, like the name of your ActiveRecord Models and the default table names. That does not appear to be the case here with Stimulus. If you have a typo with the file name of your stimulus controller you won't get a warning that controller could not find the an HTML tag to bind to.</p>
+          <p class="lead mb-4">The format is <code>[action]->[controller_name]#[function_name]</code>. It works similiarly with setting targets. What's annoying is that when Rails uses convention over configuration, it does so by setting up defaults that can be overriden, like the name of your ActiveRecord Models and the default table names. That does not appear to be the case here with Stimulus. If you have a typo with the file name of your stimulus controller you won't get a warning that controller could not find the an HTML tag to bind to.</p>
           
           <p class="lead mb-4">On top of that, Stimulus, in some strange ways reminds me of some of things I don't like about Angular. React and Vue use a virtual DOM and let you write javascript to generate your HTML. Stimulus and Angular on the other hand both use this weird hydrid where you add tags to HTML, and then Stimulus magically scans the DOM looking fort tags, and then binds to DOM the javascript file. Its all implicit rather than explicit.</p>
 
