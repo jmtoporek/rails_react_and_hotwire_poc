@@ -64,18 +64,12 @@ class PlayersController < ApplicationController
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @players }
-      format.turbo_stream { render turbo_stream: turbo_stream.replace(
-          'players',
-          partial: 'list',
-          locals: { players: @players}
-        )
-      }
     end
   end
 
   def get_players_html
     @players = self.players_search
-    render partial: 'tb/players/list'
+    render partial: 'tb/players/players_table', locals: { players: @players}
   end
 
   private
