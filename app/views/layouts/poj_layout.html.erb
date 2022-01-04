@@ -27,14 +27,13 @@
           <h3>Plain Old Javascript example </h3>
           <p>I shared the git hub repo on rails subreddit, and immediately someone felt the need to whine about the load time for jQuery. Fine, here's the same thing with plain old javascript. We're saving so much load time and bandwidth with all those users that are accessing this site on... localhost :/</p>
           <hr />
-          <p>While I built out this demo I used the following syntax;
+          <p>While I built out this demo I used the following syntax in <code>/app/assets/javascripts/poj_players_demo.js</code> file;
           </p>
 <pre>
 <code>
 const updatePlayersHtml = (playersHtml) => {
   let tbody = document.createElement('TBODY');
   tbody.setAttribute("id", "players");
-  playersHtml gets plucked, that its not double tagged
   tbody.innerHTML = playersHtml;
   const playersDomElement = document.getElementById("players");
   const tablePlayers = playersDomElement.parentNode;
