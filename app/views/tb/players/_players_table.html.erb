@@ -1,21 +1,21 @@
-<%= turbo_frame_tag "players_turbo_frame" do %>
-  <table class="table table-striped table-sm">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+<table 
+  id="players_table"
+  class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-    <tbody id="players">
-      <% players.each do |player| %>
-        <tr>
-          <td><%= player.name %></td>
-          <td><%= link_to 'Show', get_player_path(player) %></td>
-          <td><%= link_to 'Edit', get_edit_player_path(player) %></td>
-          <td><%= link_to 'Destroy', get_player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+  <tbody>
+    <% players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= link_to 'Show', get_player_path(player) %></td>
+        <td><%= link_to 'Edit', get_edit_player_path(player) %></td>
+        <td><%= link_to 'Destroy', get_player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
