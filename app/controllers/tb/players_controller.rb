@@ -3,16 +3,15 @@ class Tb::PlayersController < PlayersController
 
   def index
     @players = self.players_search
-  
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render json: @players }
-      format.turbo_stream { render turbo_stream: turbo_stream.replace(
-          'players_turbo_frame',
-          partial: 'players_table',
-          locals: { players: @players}
-        )
-      }
+
+    if turbo_frame_request?
+      render turbo_stream: turbo_stream.replace(
+        'players_turbo_frame',
+        partial: 'players_table',
+        locals: { players: @players}
+      )
+    else # this is implied and not necessary 
+     render :index
     end
   end
 
